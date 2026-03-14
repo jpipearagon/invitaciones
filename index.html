@@ -4,74 +4,99 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Invitación Especial</title>
+<title>Nuestra Boda</title>
 
-<meta property="og:title" content="Invitación Especial">
-<meta property="og:description" content="Haz clic para abrir tu invitación">
-<meta property="og:image" content="preview.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
-    background: #f5f1eb;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
+    background: #f8f6f2;
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    color: #222;
+    overflow-x: hidden;
 }
 
 .container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 430px;
+    margin: auto;
+    padding: 40px 20px;
+    min-height: 100vh;
+    position: relative;
+}
+
+.flower-top,
+.flower-bottom {
+    position: absolute;
+    width: 140px;
+    opacity: 0.7;
+}
+
+.flower-top {
+    top: 0;
+    left: 0;
+}
+
+.flower-bottom {
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+}
+
+.subtitle {
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin-top: 80px;
+}
+
+.names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 58px;
+    margin: 25px 0;
+}
+
+.date {
+    font-size: 22px;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
 }
 
 .envelope {
-    width: 220px;
-    height: 140px;
-    position: relative;
+    width: 250px;
+    margin: auto;
     cursor: pointer;
-    perspective: 1000px;
+    transition: transform 0.4s ease;
 }
 
-.base {
+.envelope:hover {
+    transform: scale(1.03);
+}
+
+.envelope img {
     width: 100%;
-    height: 100%;
-    background: #d8b48a;
-    position: absolute;
-    border-radius: 4px;
+    border-radius: 12px;
 }
 
-.flap {
-    width: 100%;
-    height: 70px;
-    background: #c89b6d;
-    position: absolute;
-    top: 0;
-    transform-origin: top;
-    transition: transform 1s ease;
-    clip-path: polygon(0 0, 100% 0, 50% 100%);
+.click-text {
+    margin-top: 20px;
+    font-size: 18px;
+    letter-spacing: 2px;
 }
 
-.envelope.open .flap {
-    transform: rotateX(180deg);
+.reserve {
+    margin-top: 50px;
+    font-size: 18px;
+    letter-spacing: 2px;
 }
 
-.message {
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    background: white;
-    top: 5%;
-    left: 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    transition: transform 1s ease;
-}
-
-.envelope.open .message {
-    transform: translateY(-160px);
+.number-box {
+    display: inline-block;
+    border: 2px solid #8fa59b;
+    border-radius: 18px;
+    padding: 10px 30px;
+    font-size: 52px;
+    margin: 15px 0;
 }
 
 #video-container {
@@ -79,7 +104,7 @@ body {
     position: fixed;
     inset: 0;
     background: black;
-    z-index: 999;
+    z-index: 9999;
 }
 
 #video-container iframe {
@@ -92,15 +117,33 @@ body {
 <body>
 
 <div class="container">
-    <div class="envelope" id="envelope">
-        <div class="base"></div>
-        <div class="flap"></div>
-        <div class="message">Abrir invitación</div>
+
+    <img class="flower-top" src="https://png.pngtree.com/png-vector/20240125/ourmid/pngtree-blue-watercolor-flower-png-image_11496776.png">
+
+    <div class="subtitle">NUESTRA BODA</div>
+
+    <div class="names">Mariana & Daniel</div>
+
+    <div class="date">29 · AGOSTO · 2025</div>
+
+    <div class="envelope" onclick="openInvitation()">
+        <img src="https://i.imgur.com/j4KpK0D.png" alt="Sobre">
     </div>
+
+    <div class="click-text">CLICK PARA ABRIR LA INVITACIÓN</div>
+
+    <div class="reserve">HEMOS RESERVADO</div>
+
+    <div class="number-box">2</div>
+
+    <div class="reserve">LUGARES EN SU HONOR</div>
+
+    <img class="flower-bottom" src="https://png.pngtree.com/png-vector/20240125/ourmid/pngtree-blue-watercolor-flower-png-image_11496776.png">
+
 </div>
 
 <div id="video-container">
-    <iframe id="vimeoVideo"
+    <iframe id="video"
         src=""
         frameborder="0"
         allow="autoplay; fullscreen"
@@ -109,20 +152,11 @@ body {
 </div>
 
 <script>
-const envelope = document.getElementById('envelope');
-const videoContainer = document.getElementById('video-container');
-const iframe = document.getElementById('vimeoVideo');
-
-envelope.addEventListener('click', () => {
-    envelope.classList.add('open');
-
-    setTimeout(() => {
-        document.querySelector('.container').style.display = 'none';
-        videoContainer.style.display = 'block';
-
-        iframe.src = "https://player.vimeo.com/video/TU_VIDEO_ID?autoplay=1";
-    }, 1500);
-});
+function openInvitation() {
+    document.getElementById("video-container").style.display = "block";
+    document.getElementById("video").src =
+        "https://player.vimeo.com/video/TU_VIDEO_ID?autoplay=1";
+}
 </script>
 
 </body>
