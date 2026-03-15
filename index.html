@@ -1,61 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Felipe & Nataly</title>
+    <title>Felipe & Nataly</title>
 
-<meta property="og:title" content="Felipe & Nataly">
-<meta property="og:description" content="Nuestra boda">
-<meta property="og:image" content="images/preview.jpg">
+    <meta property="og:title" content="Felipe & Nataly">
+    <meta property="og:description" content="Nuestra boda">
+    <meta property="og:image" content="images/preview.jpg">
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;500;700&display=swap"
+        rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-<img class="floral-top" src="images/floral-top.jpeg">
+        <img class="floral-top" src="images/floral-bottom.png">
 
-<div class="subtitle">NUESTRA BODA</div>
+        <div class="subtitle">NUESTRA BODA</div>
 
-<div class="title">Felipe & Nataly</div>
+        <div class="title">Nataly & Felipe</div>
 
-<div class="date">29 · AGOSTO · 2025</div>
+        <div class="date">14 · Noviembre · 2026</div>
 
-<div class="envelope" id="openEnvelope">
-    <img src="images/sobre.png">
-</div>
+        <div class="envelope-wrapper">
+            <div class="envelope" id="openEnvelope">
+                <img src="images/sobre.png">
+            </div>
+        </div>
 
-<div class="click-text">CLICK PARA ABRIR LA INVITACIÓN</div>
+        <div class="click-text">CLICK PARA ABRIR LA INVITACIÓN</div>
 
-<div class="reserve">HEMOS RESERVADO</div>
+        <div class="reserve">HEMOS RESERVADO</div>
 
-<div class="number-box">2</div>
+        <div class="number-box" id="guestCount"></div>
 
-<div class="reserve">LUGARES EN SU HONOR</div>
+        <div class="reserve2">LUGARES EN TU HONOR</div>
 
-<a href="https://wa.me/TUNUMERO" target="_blank">
-<button class="confirm-btn">Confirmar asistencia</button>
-</a>
+        <div class="location-section">
 
-<img class="floral-bottom" src="images/floral-bottom.jpeg">
+            <div class="location-title">LUGAR</div>
 
-</div>
+            <div class="location-info">
+                <div>3:30 PM</div>
+                <div>Batallón Jose Maria Cordova</div>
+                <div>Santa Marta</div>
+                <a href="https://maps.app.goo.gl/vpUCxw5XMnvifUzY7?g_st=aw" target="_blank" class="location-button">
+                    📍 Ver ubicación
+                </a>
+            </div>
 
-<div id="video-container">
-<iframe id="video"
-src=""
-frameborder="0"
-allow="autoplay; fullscreen"
-allowfullscreen></iframe>
-</div>
+        </div>
 
-<script src="script.js"></script>
+        <a href="https://wa.me/TUNUMERO" target="_blank">
+            <button class="confirm-btn">Confirma tu asistencia aqui</button>
+        </a>
+
+        <div class="recommendations">
+            <h2>Recomendaciones</h2>
+            <ul>
+                <li>Evita en tu ropa tonos beige, blanco o similares.</li>
+                <li>No olvides tu documento de identidad para entrar al evento.</li>
+            </ul>
+        </div>
+
+        <div class="notification">
+            <p><em>En nuestra boda, el mejor regalo es tu presencia</em></p>
+        </div>
+
+        <img class="floral-bottom" src="images/floral-bottom.png">
+
+    </div>
+
+    <div id="video-container">
+        <iframe id="video" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>

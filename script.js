@@ -1,16 +1,30 @@
-document.getElementById("openEnvelope").addEventListener("click", function(){
+document.addEventListener("DOMContentLoaded", function(){
 
-    document.querySelector(".container").style.opacity="0";
+    const params = new URLSearchParams(window.location.search);
     
-    setTimeout(()=>{
+    const invitados = params.get("invitados") || "2";
+    const videoId = params.get("video") || "123456789";
     
-    document.querySelector(".container").style.display="none";
+    document.getElementById("guestCount").textContent = invitados;
     
-    document.getElementById("video-container").style.display="block";
+    document.getElementById("openEnvelope").addEventListener("click", function () {
     
-    document.getElementById("video").src=
-    "https://player.vimeo.com/video/TU_VIDEO_ID?autoplay=1";
+        const container = document.querySelector(".container");
+        const videoContainer = document.getElementById("video-container");
+        const video = document.getElementById("video");
     
-    },800);
+        container.style.transition = "opacity .8s ease";
+        container.style.opacity = "0";
+    
+        setTimeout(() => {
+    
+            container.style.display = "none";
+            videoContainer.style.display = "block";
+    
+            video.src = `https://player.vimeo.com/video/${videoId}?autoplay=1`;
+    
+        }, 900);
+    
+    });
     
     });
