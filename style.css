@@ -54,14 +54,14 @@ body {
 
 .title {
     font-family: 'Great Vibes', cursive;
-    font-size: 64px;
-    margin: 5px 0;
+    font-size: 50px;
+    margin: 15px 0;
 }
 
 .date {
     font-size: 24px;
     letter-spacing: 3px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .envelope {
@@ -116,6 +116,7 @@ body {
 }
 
 .confirm-btn {
+    color: #222;
     margin-top: 45px;
     margin-bottom: 45px;
     background: none;
@@ -202,7 +203,7 @@ body {
 }
 
 .location-title {
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 2px;
     margin-bottom: 18px;
 }
@@ -263,7 +264,10 @@ body {
 
 .recommendations {
     margin-bottom: 40px;
-    padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
     background-color: #F5F5DC; /* Color beige claro */
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
